@@ -1,0 +1,151 @@
+
+
+
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML xmlns="http://www.w3.org/1999/xhtml"><HEAD><TITLE>简体拼音</TITLE>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+<script type="text/javascript" src="jquery.min.js"></script>
+<script type="text/javascript" src="jquery-ui-1.10.3.custom.min.js"></script>
+<script type="text/javascript" src="xuma.mb.js"></script>
+<link rel="stylesheet" href="ime.css" />
+<script type="text/javascript" src="InputEngine.min.js"></script>
+
+</head>
+
+<body>
+<h1>徐码输入法网页版
+</h1>
+<table width="100%" border="0" cellspacing="1" cellpadding="0">
+  <tr>
+    <td width="14%">
+            <button>
+        显示帮助
+        </button>
+</td>
+    <td>
+    <table width="160"  border="0" cellpadding="0" cellspacing="0" id="ime-toolbar">
+          <tr>
+            <td width="39" title="徐码简繁通打输入法">Xm</td>
+            <td width="39" title="中简、中繁、英">简</td>
+            <td width="39" title="全角、半角">◭</td>
+            <td width="39" title="中、英标点">＞</td>
+          </tr>
+    </table>
+</td>
+  </tr>
+</table>
+<script>
+$(function(){
+	$("button").click(function(e) {
+		$("#dialog-message").css({display:"block",height:window.innerHeight-30}).position({
+			my:"center top",
+			at:"center top",
+			of:"body"
+		});
+	});
+	$(".uiClose").click(function(e) {
+        $("#dialog-message").fadeOut("slow");
+    });
+	var newLen=0;//每一秒里，新增加的字符
+	var inputLen=0;
+});
+</script>
+<textarea cols="30" rows="10"></textarea>
+<div id="ime-houxian">
+  <div>字母标题</div>
+<p>
+候选用字
+</p>
+</div>
+<div id="dialog-message" title="输入法帮助">
+  <span class="uiClose">✕</span>
+  <div  style="text-align:center;font-size:24px;font-weight:bolder">徐码网页版输入法帮助</div>
+<hr />
+  <div>如果发现打字时出现n o l等字母直接上屏，请使用按键CTRL一次，切换一下。这是因为，你在将电脑更换到英文状态时，使用了CTRL键。所以，你要再切换回来
+</div>
+<p>词典功能
+</p>
+<p>
+选取或双击想要查询的字、词，将会自动出现查询结果<br />
+本功能由汉典网提供，在此表示感谢
+</p>
+<table width="279" height="165" border="0" cellpadding="0" cellspacing="4">
+  <tr>
+    <td style="text-align:center;font-weight:bolder" colspan="2">快捷键</td>
+  </tr>
+  <tr>
+    <td width="128">CTRL+f</td>
+    <td width="148">打简出繁</td>
+  </tr>
+  <tr>
+    <td>CTRL+j</td>
+    <td>打简出简</td>
+  </tr>
+  <tr>
+    <td>CTRL+e</td>
+    <td>输入出英文字符</td>
+  </tr>
+  <tr>
+    <td>CTRL+q</td>
+    <td>全角字符</td>
+  </tr>
+  <tr>
+    <td>CTRL+b</td>
+    <td>半角字符</td>
+  </tr>
+  <tr>
+    <td>CTRL+p</td>
+    <td>中英文标点切换</td>
+  </tr>
+  <tr>
+    <td>Shift+anyNumber</td>
+    <td>输出标点</td>
+  </tr>
+  <tr>
+    <td>Shift+anyLetter</td>
+    <td>输出英文大写</td>
+  </tr>
+      <tr>
+    <td>CTRL+h</td>
+    <td>显示帮助</td>
+  </tr>
+  <tr>
+    <td>数字键</td>
+    <td>选重</td>
+  </tr>
+  <tr>
+    <td>空格键 enter键</td>
+    <td>输入第一个候选字</td>
+  </tr>
+  <tr>
+    <td>；’ 键</td>
+    <td>选2，3重</td>
+  </tr>
+  <tr>
+    <td>backspace</td>
+    <td>消除字符</td>
+  </tr>
+</table>
+<p>输入法状态栏标志</p>
+输入法状态
+<ul>
+  <li>简：表示打简出简</li>
+  <li>繁：表示打简出繁</li>
+  <li>英：表示输入英文字符（可能全角英文，可能半角英文）</li>
+</ul>
+<p>全角半角状态</p>
+<ul>
+  <li>◭ ：表示全角</li>
+  <li>▲ ：表示半角<br /> 
+  注：只有在英文状态下，才分全角，半角字符。中文状态下，字符都是全角的</li>
+</ul> 
+<p>中英标点状态 </p>
+<ul>
+  <li>》：中文标点</li>
+  <li>＞：英文标点</li>
+</ul>
+</div>
+</body>
+</html>
